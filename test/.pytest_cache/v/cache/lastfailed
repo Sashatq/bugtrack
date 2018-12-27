@@ -1,1 +1,4 @@
-{}
+{
+  "test_create_project.py::test_create_project": true,
+  "test_login.py::test_login[<model.project.Project object at 0x000001FF083EE978>]": true
+}

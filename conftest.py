@@ -1,6 +1,7 @@
 import pytest
 import json
 import os.path
+import importlib
 from fixture.application import Application
 
 fixture = None
@@ -36,7 +37,11 @@ def stop(request):
 
 
 def pytest_addoption(parser):
-    parser.addoption("--browser", action="store", default="firefox")
+    parser.addoption("--browser", action="store", default="chrome")
     parser.addoption("--target", action="store", default="target.json")
+
+
+def load_from_module(module):
+    return importlib.import_module("data.%s" % module).test_data
 
 
